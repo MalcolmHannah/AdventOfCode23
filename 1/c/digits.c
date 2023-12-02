@@ -18,6 +18,42 @@ typedef struct stats_s
 stats_t;
 
 
+static int wordToDigit(const char *text)
+{
+    typedef struct digit_s
+    {
+        const char *text;
+        size_t length;
+    }
+    digit_t;
+
+    static digit_t digitMap[10] =
+    {
+        {"", 0}, // Not used, but lets each index match its digit.
+        {"one", 3}, 
+        {"two", 3},
+        {"three", 5},
+        {"four", 4},
+        {"five", 4},
+        {"six", 3},
+        {"seven", 5},
+        {"eight", 5},
+        {"nine", 4}
+    };
+
+    // Start at 1, as "zero" is not allowed.
+    for (int i = 1; i < 10; i++)
+    {
+        if (0 == strncmp(text, digitMap[i].text, digitMap[i].length))
+        {
+            return i;
+        }
+    }
+
+    return NOT_FOUND;
+}
+
+
 /// @brief Read file into memory.
 /// @param name Full path and file name.
 /// @return Address of buffer holding file content.  Caller must free.
@@ -129,13 +165,24 @@ static void findDigits(const char *content, stats_t *stats)
             continue;
         }
 
+        int thisDigit = NOT_FOUND;
+
         if (isdigit(currentChar))
+        {
+            thisDigit = INT_FROM_DIGIT_CHAR(currentChar);
+        }
+        else
+        {
+            thisDigit = wordToDigit(cursor);
+        }
+
+        if (thisDigit != NOT_FOUND)
         {
             if (firstDigit == NOT_FOUND)
             {
-                firstDigit = INT_FROM_DIGIT_CHAR(currentChar);
+                firstDigit = thisDigit;
             }
-            finalDigit = INT_FROM_DIGIT_CHAR(currentChar);
+            finalDigit = thisDigit;
         }
     }
 }
