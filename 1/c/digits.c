@@ -208,5 +208,6 @@ int main(void)
         stats.linesWithoutDigits,
         stats.total);
     
+    free(entireFile);
     return 0;
 }
