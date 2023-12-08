@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.8.34316.72
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "digits", "digits.csproj", "{17584990-0AC4-4929-BE55-F2E0C228BDEF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Digits", "Digits\Digits.csproj", "{17584990-0AC4-4929-BE55-F2E0C228BDEF}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Digits.Test", "Digits.Test\Digits.Test.csproj", "{4FEB66D4-A626-453E-A233-A4AC3D750E74}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{17584990-0AC4-4929-BE55-F2E0C228BDEF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{17584990-0AC4-4929-BE55-F2E0C228BDEF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{17584990-0AC4-4929-BE55-F2E0C228BDEF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4FEB66D4-A626-453E-A233-A4AC3D750E74}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4FEB66D4-A626-453E-A233-A4AC3D750E74}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4FEB66D4-A626-453E-A233-A4AC3D750E74}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4FEB66D4-A626-453E-A233-A4AC3D750E74}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
